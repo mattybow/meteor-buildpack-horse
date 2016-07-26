@@ -103,7 +103,7 @@ export CPPPATH="$CPATH"
 # Install meteor
 #
 echo "-----> Installing meteor"
-curl -sS https://install.meteor.com | HOME="$METEOR_DIR" /bin/sh
+curl -sS https://gist.githubusercontent.com/mattybow/9a0d574f0e72bbcb4b4f99df459a9c89/raw/8475ebefd339716c1285c4c98bc1a751399b5f26/meteor-stable.sh | HOME="$METEOR_DIR" /bin/sh
 METEOR="$METEOR_DIR/.meteor/meteor" # The meteor binary.
 
 # Maybe update release. Upgrade only if needed because it's slow.
@@ -148,7 +148,7 @@ if [ -e "$APP_SOURCE_DIR"/package.json ]; then
   npm install
 fi
 
-# Related to https://github.com/meteor/meteor/issues/2796 and 
+# Related to https://github.com/meteor/meteor/issues/2796 and
 # https://github.com/meteor/meteor/issues/2606.  Some packages only build their
 # assets at runtime, and thus they are not available for bundling unless meteor
 # has been launched.  To opt-in to this, set BUILDPACK_PRELAUNCH_METEOR=1.
